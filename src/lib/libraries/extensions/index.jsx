@@ -90,6 +90,26 @@ export default [
     {
         name: (
             <FormattedMessage
+                defaultMessage="Body Sensing"
+                description="Name for the 'Body Sensing' extension"
+                id="gui.extension.bodysensing.name"
+            />
+        ),
+        extensionId: 'bodySensing',
+        iconURL: videoImage,
+        insetIconURL: videoInsetImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Sense body positions with the camera."
+                description="Description for the 'Body Sensing' extension"
+                id="gui.extension.bodysensing.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="Video Sensing"
                 description="Name for the 'Video Sensing' extension"
                 id="gui.extension.videosensing.name"
