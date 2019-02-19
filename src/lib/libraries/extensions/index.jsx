@@ -29,6 +29,26 @@ export default [
     {
         name: (
             <FormattedMessage
+                defaultMessage="Doppler"
+                description="Name for the 'Music' extension"
+                id="gui.extension.doppler.name"
+            />
+        ),
+        extensionId: 'doppler',
+        iconURL: musicImage,
+        insetIconURL: musicInsetImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Wave your hand at your computer!"
+                description="Description for the 'Music' extension"
+                id="gui.extension.doppler.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="Music"
                 description="Name for the 'Music' extension"
                 id="gui.extension.music.name"
