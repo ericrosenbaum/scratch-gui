@@ -288,6 +288,7 @@ export default [
         featured: true,
         disabled: false,
         bluetoothRequired: true,
+        internetConnectionRequired: true,
         launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: gdxforConnectionIconURL,
