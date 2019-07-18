@@ -44,6 +44,17 @@ class AudioEffects {
             this.audioContext = new window.webkitOfflineAudioContext(1, sampleScale * sampleCount, 44100);
         }
 
+        // Limit the gain used by the louder effect so that it does not cause the sound to clip
+        this.louderGain = 1.25;
+        if (name === effectTypes.LOUDER) {
+            const bufferData = buffer.getChannelData(0);
+            let max = 0;
+            for (let i = 0; i < bufferData.length; i++) {
+                max = Math.max(max, Math.abs(bufferData[i]));
+            }
+            this.louderGain = Math.min(this.louderGain, 1 / max);
+        }
+
         // For the reverse effect we need to manually reverse the data into a new audio buffer
         // to prevent overwriting the original, so that the undo stack works correctly.
         // Doing buffer.reverse() would mutate the original data.
@@ -72,7 +83,7 @@ class AudioEffects {
         let output;
         switch (this.name) {
         case effectTypes.LOUDER:
-            ({input, output} = new VolumeEffect(this.audioContext, 1.25));
+            ({input, output} = new VolumeEffect(this.audioContext, this.louderGain));
             break;
         case effectTypes.SOFTER:
             ({input, output} = new VolumeEffect(this.audioContext, 0.75));
