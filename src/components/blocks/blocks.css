@@ -83,9 +83,10 @@
         causing incorrect stack clicks on duplicate, and prevented the correct
         cursor from showing when dragging over the toolbox to delete.
     */
-    width: 1px;
+    /* width: 1px;
     height: 1px;
-    overflow: visible;
+    overflow: visible; */
+    pointer-events: none;
     z-index: $z-index-drag-layer; /* make blocks match gui drag layer */
 }
 
