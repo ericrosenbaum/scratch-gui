@@ -7,6 +7,8 @@ import musicInsetIconURL from './music/music-small.svg';
 import penIconURL from './pen/pen.png';
 import penInsetIconURL from './pen/pen-small.svg';
 
+import bodySensingIconURL from './bodySensing/bodySensing.gif';
+
 import videoSensingIconURL from './videoSensing/video-sensing.png';
 import videoSensingInsetIconURL from './videoSensing/video-sensing-small.svg';
 
@@ -83,6 +85,26 @@ export default [
                 defaultMessage="Draw with your sprites."
                 description="Description for the 'Pen' extension"
                 id="gui.extension.pen.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Body Sensing"
+                description="Name for the 'Body Sensing' extension"
+                id="gui.extension.bodysensing.name"
+            />
+        ),
+        extensionId: 'bodySensing',
+        iconURL: bodySensingIconURL,
+        insetIconURL: videoSensingInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Sense body positions with the camera."
+                description="Description for the 'Body Sensing' extension"
+                id="gui.extension.bodysensing.description"
             />
         ),
         featured: true
