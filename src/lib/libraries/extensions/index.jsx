@@ -7,6 +7,8 @@ import musicInsetIconURL from './music/music-small.svg';
 import penIconURL from './pen/pen.png';
 import penInsetIconURL from './pen/pen-small.svg';
 
+import bodySensingIconURL from './bodySensing/bodySensing.gif';
+
 import videoSensingIconURL from './videoSensing/video-sensing.png';
 import videoSensingInsetIconURL from './videoSensing/video-sensing-small.svg';
 
@@ -96,8 +98,8 @@ export default [
             />
         ),
         extensionId: 'bodySensing',
-        iconURL: videoImage,
-        insetIconURL: videoInsetImage,
+        iconURL: bodySensingIconURL,
+        insetIconURL: videoSensingInsetIconURL,
         description: (
             <FormattedMessage
                 defaultMessage="Sense body positions with the camera."
