@@ -21,7 +21,9 @@ class AudioEffects {
     static get effectTypes () {
         return effectTypes;
     }
-    constructor (buffer, name, trimStart, trimEnd) {
+    constructor (buffer, name, trimStart, trimEnd, superpowered) {
+        this.superpowered = superpowered;
+
         this.trimStartSeconds = (trimStart * buffer.length) / buffer.sampleRate;
         this.trimEndSeconds = (trimEnd * buffer.length) / buffer.sampleRate;
         this.adjustedTrimStartSeconds = this.trimStartSeconds;
@@ -100,6 +102,21 @@ class AudioEffects {
         this.source.buffer = this.buffer;
         this.name = name;
     }
+    setupSuperpowered () {
+        return new Promise(resolve => {
+            return this.superpowered.createAudioNode(this.audioContext, '../../../static/processor.js', 'MyProcessor',
+                newNode => {
+                    console.log('superpowered node ready');
+                    this.superpoweredNode = newNode;
+                },
+                // runs when the audio node sends a message
+                message => {
+                  console.log('Message received from the audio node: ' + message);
+                  resolve();
+                }
+            );
+        });
+    }
     process (done) {
         // Some effects need to use more nodes and must expose an input and output
         let input;
@@ -107,8 +124,16 @@ class AudioEffects {
         switch (this.name) {
         case effectTypes.FASTER:
         case effectTypes.SLOWER:
-            this.source.playbackRate.setValueAtTime(this.playbackRate, this.adjustedTrimStartSeconds);
-            this.source.playbackRate.setValueAtTime(1.0, this.adjustedTrimEndSeconds);
+            // this.source.playbackRate.setValueAtTime(this.playbackRate, this.adjustedTrimStartSeconds);
+            // this.source.playbackRate.setValueAtTime(1.0, this.adjustedTrimEndSeconds);
+            //
+            console.log('process', this.superpoweredNode);
+            this.superpoweredNode.sendMessageToAudioScope({
+                left: this.buffer.getChannelData(0),
+                right: this.buffer.getChannelData(0),
+                rate: this.playbackRate * 10000
+            });
+            output = this.superpoweredNode;
             break;
         case effectTypes.LOUDER:
             ({input, output} = new VolumeEffect(this.audioContext, 1.25,
@@ -140,12 +165,19 @@ class AudioEffects {
             break;
         }
 
+        console.log('input', input);
+        console.log('output', output);
         if (input && output) {
             this.source.connect(input);
             output.connect(this.audioContext.destination);
-        } else {
+        }
+        if (!input && !output) {
             // No effects nodes are needed, wire directly to the output
             this.source.connect(this.audioContext.destination);
+        }
+        if (!input && output) {
+            console.log('using a superpowered effect');
+            output.connect(this.audioContext.destination);
         }
 
         this.source.start();

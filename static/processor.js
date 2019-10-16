@@ -11,6 +11,10 @@ class MyProcessor extends SuperpoweredModule.AudioWorkletProcessor {
         this.pcm = Superpowered.createFloatArray(2048 * 2);
         // the star of the show
         this.timeStretching = Superpowered.new('TimeStretching', Superpowered.samplerate, 0.5, 1);
+        console.log('MyProcessor onReady');
+        this.sendMessageToMainScope({
+            someText: "actually ready"
+        });
     }
 
     onMessageFromMainScope(message) {
@@ -25,6 +29,7 @@ class MyProcessor extends SuperpoweredModule.AudioWorkletProcessor {
         }
         // changing the rate?
         if (typeof message.rate !== 'undefined') this.timeStretching.rate = message.rate / 10000.0;
+        console.log(this.timeStretching.rate);
         // changing the pitch shift?
         if (typeof message.pitchShift !== 'undefined') this.timeStretching.pitchShiftCents = message.pitchShift * 100;
     }

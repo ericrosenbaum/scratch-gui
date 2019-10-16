@@ -12,6 +12,8 @@ import SoundEditorComponent from '../components/sound-editor/sound-editor.jsx';
 import AudioBufferPlayer from '../lib/audio/audio-buffer-player.js';
 import log from '../lib/log.js';
 
+import SuperpoweredModule from '../../static/superpowered.js';
+
 const UNDO_STACK_SIZE = 99;
 
 const MAX_RMS = 1.2;
@@ -53,6 +55,15 @@ class SoundEditor extends React.Component {
         this.undoStack = [];
 
         this.ref = null;
+
+        this.superpowered = SuperpoweredModule({
+            licenseKey: 'ExampleLicenseKey-WillExpire-OnNextUpdate',
+            enableAudioTimeStretching: true,
+
+            onReady: () => {
+                console.log('superpowered loaded');
+            }
+        });
     }
     componentDidMount () {
         this.audioBufferPlayer = new AudioBufferPlayer(this.props.samples, this.props.sampleRate);
@@ -253,18 +264,21 @@ class SoundEditor extends React.Component {
             return;
         }
 
-        const effects = new AudioEffects(this.audioBufferPlayer.buffer, name, trimStart, trimEnd);
-        effects.process((renderedBuffer, adjustedTrimStart, adjustedTrimEnd) => {
-            const samples = renderedBuffer.getChannelData(0);
-            const sampleRate = renderedBuffer.sampleRate;
-            const success = this.submitNewSamples(samples, sampleRate);
-            if (success) {
-                if (this.state.trimStart === null) {
-                    this.handlePlay();
-                } else {
-                    this.setState({trimStart: adjustedTrimStart, trimEnd: adjustedTrimEnd}, this.handlePlay);
+        const effects = new AudioEffects(this.audioBufferPlayer.buffer, name, trimStart, trimEnd,
+            this.superpowered);
+        effects.setupSuperpowered().then(() => {
+            effects.process((renderedBuffer, adjustedTrimStart, adjustedTrimEnd) => {
+                const samples = renderedBuffer.getChannelData(0);
+                const sampleRate = renderedBuffer.sampleRate;
+                const success = this.submitNewSamples(samples, sampleRate);
+                if (success) {
+                    if (this.state.trimStart === null) {
+                        this.handlePlay();
+                    } else {
+                        this.setState({trimStart: adjustedTrimStart, trimEnd: adjustedTrimEnd}, this.handlePlay);
+                    }
                 }
-            }
+            });
         });
     }
     tooLoud () {
