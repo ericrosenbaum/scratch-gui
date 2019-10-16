@@ -27,6 +27,9 @@ import fadeOutIcon from './icon--fade-out.svg';
 import fadeInIcon from './icon--fade-in.svg';
 import muteIcon from './icon--mute.svg';
 
+import higherIcon from './icon--higher.svg';
+import lowerIcon from './icon--lower.svg';
+
 import deleteIcon from './icon--delete.svg';
 import copyIcon from './icon--copy.svg';
 import pasteIcon from './icon--paste.svg';
@@ -254,6 +257,18 @@ const SoundEditor = props => (
             </div>
             <IconButton
                 className={styles.effectButton}
+                img={higherIcon}
+                title={'Higher'}
+                onClick={props.onHigher}
+            />
+            <IconButton
+                className={styles.effectButton}
+                img={lowerIcon}
+                title={'Lower'}
+                onClick={props.onLower}
+            />
+            <IconButton
+                className={styles.effectButton}
                 img={fasterIcon}
                 title={<FormattedMessage {...messages.faster} />}
                 onClick={props.onFaster}
@@ -327,7 +342,9 @@ SoundEditor.propTypes = {
     onFadeIn: PropTypes.func.isRequired,
     onFadeOut: PropTypes.func.isRequired,
     onFaster: PropTypes.func.isRequired,
+    onHigher: PropTypes.func.isRequired,
     onLouder: PropTypes.func.isRequired,
+    onLower: PropTypes.func.isRequired,
     onMute: PropTypes.func.isRequired,
     onPaste: PropTypes.func.isRequired,
     onPlay: PropTypes.func.isRequired,

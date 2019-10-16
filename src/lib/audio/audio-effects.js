@@ -14,7 +14,9 @@ const effectTypes = {
     ECHO: 'echo',
     FADEIN: 'fade in',
     FADEOUT: 'fade out',
-    MUTE: 'mute'
+    MUTE: 'mute',
+    HIGHER: 'higher',
+    LOWER: 'lower'
 };
 
 class AudioEffects {
@@ -39,6 +41,7 @@ class AudioEffects {
         const unaffectedSampleCount = sampleCount - affectedSampleCount;
 
         this.playbackRate = 1;
+        this.pitchShift = 0;
         switch (name) {
         case effectTypes.ECHO:
             sampleCount = Math.max(sampleCount,
@@ -54,6 +57,12 @@ class AudioEffects {
             this.playbackRate = 1 / pitchRatio;
             adjustedAffectedSampleCount = Math.floor(affectedSampleCount / this.playbackRate);
             sampleCount = unaffectedSampleCount + adjustedAffectedSampleCount;
+            break;
+        case effectTypes.HIGHER:
+            this.pitchShift = 4;
+            break;
+        case effectTypes.LOWER:
+            this.pitchShift = -4;
             break;
         }
 
@@ -122,12 +131,17 @@ class AudioEffects {
         let input;
         let output;
         switch (this.name) {
+        case effectTypes.HIGHER:
+        case effectTypes.LOWER:
+            this.superpoweredNode.sendMessageToAudioScope({
+                left: this.buffer.getChannelData(0),
+                right: this.buffer.getChannelData(0),
+                pitchShift: this.pitchShift
+            });
+            output = this.superpoweredNode;
+            break;
         case effectTypes.FASTER:
         case effectTypes.SLOWER:
-            // this.source.playbackRate.setValueAtTime(this.playbackRate, this.adjustedTrimStartSeconds);
-            // this.source.playbackRate.setValueAtTime(1.0, this.adjustedTrimEndSeconds);
-            //
-            console.log('process', this.superpoweredNode);
             this.superpoweredNode.sendMessageToAudioScope({
                 left: this.buffer.getChannelData(0),
                 right: this.buffer.getChannelData(0),
@@ -165,8 +179,6 @@ class AudioEffects {
             break;
         }
 
-        console.log('input', input);
-        console.log('output', output);
         if (input && output) {
             this.source.connect(input);
             output.connect(this.audioContext.destination);
@@ -176,7 +188,6 @@ class AudioEffects {
             this.source.connect(this.audioContext.destination);
         }
         if (!input && output) {
-            console.log('using a superpowered effect');
             output.connect(this.audioContext.destination);
         }
 

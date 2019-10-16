@@ -448,6 +448,8 @@ class SoundEditor extends React.Component {
                 onSofter={this.effectFactory(effectTypes.SOFTER)}
                 onStop={this.handleStopPlaying}
                 onUndo={this.handleUndo}
+                onHigher={this.effectFactory(effectTypes.HIGHER)}
+                onLower={this.effectFactory(effectTypes.LOWER)}
             />
         );
     }
