@@ -15,8 +15,8 @@ const effectTypes = {
     FADEIN: 'fade in',
     FADEOUT: 'fade out',
     MUTE: 'mute',
-    HIGHER: 'higher',
-    LOWER: 'lower'
+    HIGHER: 'higherPitch',
+    LOWER: 'lowerPitch'
 };
 
 class AudioEffects {
@@ -120,8 +120,8 @@ class AudioEffects {
                 },
                 // runs when the audio node sends a message
                 message => {
-                  console.log('Message received from the audio node: ' + message);
-                  resolve();
+                    console.log('Message received from the audio node: ' + message.someText);
+                    resolve();
                 }
             );
         });
@@ -187,7 +187,7 @@ class AudioEffects {
             // No effects nodes are needed, wire directly to the output
             this.source.connect(this.audioContext.destination);
         }
-        if (!input && output) {
+        if (!input && output === this.superpoweredNode) {
             output.connect(this.audioContext.destination);
         }
 
