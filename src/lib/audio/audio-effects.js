@@ -113,7 +113,7 @@ class AudioEffects {
     }
     setupSuperpowered () {
         return new Promise(resolve => {
-            return this.superpowered.createAudioNode(this.audioContext, '../../../static/processor.js', 'MyProcessor',
+            return this.superpowered.createAudioNode(this.audioContext, './static/processor.js', 'MyProcessor',
                 newNode => {
                     console.log('superpowered node ready');
                     this.superpoweredNode = newNode;
