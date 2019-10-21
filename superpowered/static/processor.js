@@ -29,7 +29,6 @@ class MyProcessor extends SuperpoweredModule.AudioWorkletProcessor {
         }
         // changing the rate?
         if (typeof message.rate !== 'undefined') this.timeStretching.rate = message.rate / 10000.0;
-        console.log(this.timeStretching.rate);
         // changing the pitch shift?
         if (typeof message.pitchShift !== 'undefined') this.timeStretching.pitchShiftCents = message.pitchShift * 100;
     }
