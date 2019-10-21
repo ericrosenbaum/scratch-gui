@@ -17,7 +17,7 @@ class MyProcessor extends SuperpoweredModule.AudioWorkletProcessor {
         });
     }
 
-    onMessageFromMainScope(message) {
+    onMessageFromMainScope (message) {
         // did we receive the audio from the main thread?
         if (message.left && message.right) {
             // left and right channels are NOT stored in WASM memory
@@ -33,7 +33,7 @@ class MyProcessor extends SuperpoweredModule.AudioWorkletProcessor {
         if (typeof message.pitchShift !== 'undefined') this.timeStretching.pitchShiftCents = message.pitchShift * 100;
     }
 
-    processAudio(inputBuffer, outputBuffer, buffersize, parameters) {
+    processAudio (inputBuffer, outputBuffer, buffersize, parameters) {
         // did we receive the left and right channels already?
         if (this.posFrames == -1) { // if not, output silence
             for (let n = 0; n < buffersize * 2; n++) outputBuffer.array[n] = 0;

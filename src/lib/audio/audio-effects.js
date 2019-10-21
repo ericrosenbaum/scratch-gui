@@ -136,9 +136,45 @@ class AudioEffects {
             this.superpoweredNode.sendMessageToAudioScope({
                 left: this.buffer.getChannelData(0),
                 right: this.buffer.getChannelData(0),
-                pitchShift: this.pitchShift
+                pitchShift: this.pitchShift // 0 //
             });
             output = this.superpoweredNode;
+
+            // Constructor.
+            // let analyzer = this.superpowered.new('Analyzer',
+            //     this.buffer.sampleRate, // The sample rate of the audio input.
+            //     this.buffer.duration     // The length in seconds of the audio input. The analyzer will not be able to process more audio than this. You can change this value in the process() method.
+            // );
+            //
+            // let myBuffer = this.superpowered.createFloatArray(this.buffer.length);
+            //
+            // this.superpowered.Interleave(
+            //     this.buffer.getChannelData(0),
+            //     this.buffer.getChannelData(0),
+            //     myBuffer.pointer,
+            //     this.buffer.length
+            // )
+            //
+            // // Processes some audio. This method can be used in a real-time audio thread if lengthSeconds is -1. Has no return value.
+            // analyzer.process(
+            //     myBuffer.pointer, // Pointer to floating point numbers. 32-bit interleaved stereo input.
+            //     this.buffer.length,   // Number of frames to process.
+            //     -1     // If the audio input length may change, set this to the current length. Use -1 otherwise. If this value is not -1, this method can NOT be used in a real-time audio thread.
+            // );
+            //
+            // // Makes results from the collected data. This method should NOT be used in a real-time audio thread, because it allocates memory. Has no return value.
+            // analyzer.makeResults(
+            //     60,   // Detected bpm will be more than or equal to this. Recommended value: 60.
+            //     200,  // Detected bpm will be less than or equal to this. Recommended value: 200.
+            //     0,    // If you know the bpm set it here. Use 0 otherwise.
+            //     0,    // Provides a "hint" for the analyzer with this. Use 0 otherwise.
+            //     true, // True: calculate beatgridStartMs. False: save some CPU with not calculating it.
+            //     0,    // Provides a "hint" for the analyzer with this. Use 0 otherwise.
+            //     false, // True: make overviewWaveform. False: save some CPU and memory with not making it.
+            //     false, // True: make the low/mid/high waveforms. False: save some CPU and memory with not making them.
+            //     true  // True: calculate keyIndex. False: save some CPU with not calculating it.
+            // );
+            // debugger;
             break;
         case effectTypes.FASTER:
         case effectTypes.SLOWER:

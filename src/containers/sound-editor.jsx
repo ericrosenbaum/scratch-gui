@@ -58,8 +58,8 @@ class SoundEditor extends React.Component {
 
         this.superpowered = SuperpoweredModule({
             licenseKey: 'ExampleLicenseKey-WillExpire-OnNextUpdate',
+            enableAudioAnalysis: true,
             enableAudioTimeStretching: true,
-
             onReady: () => {
                 console.log('superpowered loaded');
             }

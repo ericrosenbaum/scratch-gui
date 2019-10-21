@@ -48,6 +48,14 @@ import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
 export default [
     {
+        name: 'Audio Analyzer',
+        extensionId: 'analyzer',
+        iconURL: musicIconURL,
+        insetIconURL: musicInsetIconURL,
+        description: 'Animate to the beat',
+        featured: true
+    },
+    {
         name: (
             <FormattedMessage
                 defaultMessage="Music"
