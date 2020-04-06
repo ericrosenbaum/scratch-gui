@@ -31,6 +31,8 @@ import DragLayer from '../../containers/drag-layer.jsx';
 import ConnectionModal from '../../containers/connection-modal.jsx';
 import TelemetryModal from '../telemetry-modal/telemetry-modal.jsx';
 
+import WelcomeModal from '../welcome-modal/welcome-modal.jsx';
+
 import layout, {STAGE_SIZE_MODES} from '../../lib/layout-constants';
 import {resolveStageSize} from '../../lib/screen-utils';
 
@@ -115,6 +117,7 @@ const GUIComponent = props => {
         telemetryModalVisible,
         tipsLibraryVisible,
         vm,
+        welcomeModalVisible,
         ...componentProps
     } = omit(props, 'dispatch');
     if (children) {
@@ -198,6 +201,9 @@ const GUIComponent = props => {
                         vm={vm}
                         onRequestClose={onRequestCloseBackdropLibrary}
                     />
+                ) : null}
+                {welcomeModalVisible ? (
+                    <WelcomeModal />
                 ) : null}
                 <MenuBar
                     accountNavOpen={accountNavOpen}
@@ -411,7 +417,8 @@ GUIComponent.propTypes = {
     targetIsStage: PropTypes.bool,
     telemetryModalVisible: PropTypes.bool,
     tipsLibraryVisible: PropTypes.bool,
-    vm: PropTypes.instanceOf(VM).isRequired
+    vm: PropTypes.instanceOf(VM).isRequired,
+    welcomeModalVisible: PropTypes.bool
 };
 GUIComponent.defaultProps = {
     backpackHost: null,
