@@ -45,6 +45,11 @@
     vertical-align: middle;
 }
 
+.scratch-lab-logo {
+    height:  3.2rem;
+    vertical-align: middle;
+}
+
 .scratch-logo.clickable {
     cursor: pointer;
 }

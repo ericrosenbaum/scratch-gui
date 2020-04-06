@@ -302,7 +302,7 @@ class MenuBar extends React.Component {
                         <div className={classNames(styles.menuBarItem)}>
                             <img
                                 alt="Scratch"
-                                className={classNames(styles.scratchLogo, {
+                                className={classNames(styles.scratchLabLogo, {
                                     [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
                                 })}
                                 draggable={false}
