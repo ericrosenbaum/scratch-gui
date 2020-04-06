@@ -62,7 +62,7 @@ import helpIcon from '../../lib/assets/icon--tutorials.svg';
 import dropdownCaret from './dropdown-caret.svg';
 import languageIcon from '../language-selector/language-icon.svg';
 
-import scratchLogo from './scratch-logo.svg';
+import scratchLabLogo from './scratch-lab-logo.svg';
 
 import sharedMessages from '../../lib/shared-messages';
 
@@ -316,10 +316,9 @@ class MenuBar extends React.Component {
                                 description="title of the color picking exploration"
                                 id="gui.colorPickingExploration.title"
                             />
-                        </div>
-                        <div className={styles.menuBarItem}>
                             <img
                                 alt="Help"
+                                className={styles.questionIcon}
                                 draggable={false}
                                 src={questionIcon}
                                 onClick={this.props.onClickLogo}
@@ -568,7 +567,7 @@ MenuBar.propTypes = {
 };
 
 MenuBar.defaultProps = {
-    logo: scratchLogo,
+    logo: scratchLabLogo,
     onShare: () => {}
 };
 

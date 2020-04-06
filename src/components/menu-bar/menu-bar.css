@@ -170,6 +170,10 @@
     margin-right: 0.35rem;
 }
 
+.question-icon {
+    margin-left: 0.5rem;
+}
+
 .account-nav-menu, .mystuff-button {
     padding: 0 .25rem;
     display: flex;
