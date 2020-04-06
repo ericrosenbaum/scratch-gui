@@ -25,7 +25,7 @@ import MenuBarHOC from '../../containers/menu-bar-hoc.jsx';
 
 import questionIcon from '../../lib/assets/icon--help.svg';
 
-import {openTipsLibrary} from '../../reducers/modals';
+import {openTipsLibrary, openWelcomeModal} from '../../reducers/modals';
 import {setPlayer} from '../../reducers/mode';
 import {
     autoUpdateProject,
@@ -310,7 +310,10 @@ class MenuBar extends React.Component {
                             />
                         </div>
                         <Divider className={classNames(styles.divider)} />
-                        <div className={styles.menuBarItem}>
+                        <div
+                            className={classNames(styles.menuBarItem, styles.hoverable)}
+                            onClick={this.props.onOpenWelcomeModal}
+                        >
                             <FormattedMessage
                                 defaultMessage="Color Picking Exploration"
                                 description="title of the color picking exploration"
@@ -321,7 +324,6 @@ class MenuBar extends React.Component {
                                 className={styles.questionIcon}
                                 draggable={false}
                                 src={questionIcon}
-                                onClick={this.props.onClickLogo}
                             />
                         </div>
                         <Divider className={classNames(styles.divider)} />
@@ -545,6 +547,7 @@ MenuBar.propTypes = {
     onClickSave: PropTypes.func,
     onClickSaveAsCopy: PropTypes.func,
     onLogOut: PropTypes.func,
+    onOpenWelcomeModal: PropTypes.func,
     onOpenRegistration: PropTypes.func,
     onOpenTipLibrary: PropTypes.func,
     onProjectTelemetryEvent: PropTypes.func,
@@ -595,6 +598,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     autoUpdateProject: () => dispatch(autoUpdateProject()),
+    onOpenWelcomeModal: () => dispatch(openWelcomeModal()),
     onOpenTipLibrary: () => dispatch(openTipsLibrary()),
     onClickAccount: () => dispatch(openAccountMenu()),
     onRequestCloseAccount: () => dispatch(closeAccountMenu()),
