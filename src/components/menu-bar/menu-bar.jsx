@@ -30,6 +30,8 @@ import DeletionRestorer from '../../containers/deletion-restorer.jsx';
 import TurboMode from '../../containers/turbo-mode.jsx';
 import MenuBarHOC from '../../containers/menu-bar-hoc.jsx';
 
+import questionIcon from '../../lib/assets/icon--help.svg';
+
 import {openTipsLibrary} from '../../reducers/modals';
 import {setPlayer} from '../../reducers/mode';
 import {
@@ -331,6 +333,23 @@ class MenuBar extends React.Component {
                                 onClick={this.props.onClickLogo}
                             />
                         </div>
+                        <Divider className={classNames(styles.divider)} />
+                        <div className={styles.menuBarItem}>
+                            <FormattedMessage
+                                defaultMessage="Color Picking Exploration"
+                                description="title of the color picking exploration"
+                                id="gui.colorPickingExploration.title"
+                            />
+                        </div>
+                        <div className={styles.menuBarItem}>
+                            <img
+                                alt="Help"
+                                draggable={false}
+                                src={questionIcon}
+                                onClick={this.props.onClickLogo}
+                            />
+                        </div>
+                        <Divider className={classNames(styles.divider)} />
                         {(this.props.canChangeLanguage) && (<div
                             className={classNames(styles.menuBarItem, styles.hoverable, styles.languageMenu)}
                         >
