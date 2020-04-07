@@ -315,9 +315,9 @@ class MenuBar extends React.Component {
                             onClick={this.props.onOpenWelcomeModal}
                         >
                             <FormattedMessage
-                                defaultMessage="Color Picking Exploration"
-                                description="title of the color picking exploration"
-                                id="gui.colorPickingExploration.title"
+                                defaultMessage="Color Palette Exploration"
+                                description="title of the color palette exploration"
+                                id="gui.colorPaletteExploration.title"
                             />
                             <img
                                 alt="Help"
