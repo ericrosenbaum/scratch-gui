@@ -186,8 +186,13 @@ $sides: 20rem;
     background-size: cover;
 }
 
+.scratch-lab-logo {
+    height:  8rem;
+}
+
 .masthead-inner {
     width: 600px;
+    padding-bottom: 2rem;
 }
 
 .masthead-text {
@@ -196,6 +201,31 @@ $sides: 20rem;
     text-align: center;
 }
 
-.scratch-lab-logo {
-    height:  8rem;
+.masthead-callout {
+    width: 800px;
+    background-color: $ui-white;
+    border-radius: 0.5rem;
+}
+
+.callout-info {
+    padding: 4rem;
+    max-width: 300px;
+}
+
+.callout-text {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.try-it-button {
+    background: $motion-primary;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+.bleb {
+    background-image: url("./bleb.svg");
+    background-size: cover;
+    margin:auto;
 }

@@ -9,6 +9,7 @@ import Button from '../button/button.jsx';
 
 import surpriseIcon from './icon--surprise.svg';
 import scratchLabLogo from './scratch-lab-logo.svg';
+import bleb from './bleb.svg';
 
 import styles from './welcome-modal.css';
 
@@ -51,8 +52,8 @@ const WelcomeModalComponent = props => (
                         onClick={props.onClose}
                     >
                         <FormattedMessage
-                            defaultMessage="Try it"
-                            description="Try it button in modal"
+                            defaultMessage="Try it out"
+                            description="Try it out button in modal"
                             id="gui.welcomeModal.tryIt"
                         />
                     </Button>
@@ -79,6 +80,35 @@ const WelcomeModalComponent = props => (
                             description="description of Scratch Lab"
                             id="gui.welcomeModal.descriptionOfScratchLab"
                         />
+                    </div>
+                </div>
+                <div className={styles.flexRow}>
+                    <div className={classNames(styles.mastheadCallout, styles.flexRow)}>
+                        <div className={styles.calloutInfo}>
+                            <div className={styles.calloutText}>
+                                <FormattedMessage
+                                    defaultMessage="Try a new way to pick colors in the Costume Editor"
+                                    description="Color palette callout info"
+                                    id="gui.welcomeModal.colorPaletteCalloutInfo"
+                                />
+                            </div>
+                            <div>
+                                <Button
+                                    className={styles.tryItButton}
+                                    iconSrc={surpriseIcon}
+                                    onClick={props.onClose}
+                                >
+                                    <FormattedMessage
+                                        defaultMessage="Try it out"
+                                        description="Try it out button in modal"
+                                        id="gui.welcomeModal.tryIt"
+                                    />
+                                </Button>
+                            </div>
+                        </div>
+                        <div className={styles.bleb}>
+
+                        </div>
                     </div>
                 </div>
             </Box>
