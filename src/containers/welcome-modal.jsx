@@ -13,15 +13,12 @@ import {
     COSTUMES_TAB_INDEX
 } from '../reducers/editor-tab.js';
 
-class WelcomeModal extends React.Component {
-    render () {
-        return (
-            <WelcomeModalComponent
-                onClose={this.props.onClose}
-            />
-        );
-    }
-}
+/* eslint-disable react/display-name */
+const WelcomeModal = props => (
+    <WelcomeModalComponent
+        onClose={props.onClose}
+    />
+);
 
 WelcomeModal.propTypes = {
     onClose: PropTypes.func
