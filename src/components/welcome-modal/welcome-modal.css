@@ -168,3 +168,34 @@ $sides: 20rem;
 [dir="rtl"] .help-button {
     padding-left: 0;
 }
+
+/* welcome modal */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.masthead {
+    height: 525px;
+    background-color: $pen-primary;
+    background-image: url("./juice.svg");
+    background-size: cover;
+}
+
+.masthead-inner {
+    width: 600px;
+}
+
+.masthead-text {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.scratch-lab-logo {
+    height:  8rem;
+}

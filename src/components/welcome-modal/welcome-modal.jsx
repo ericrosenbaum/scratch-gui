@@ -6,7 +6,9 @@ import {FormattedMessage} from 'react-intl';
 
 import Box from '../box/box.jsx';
 import Button from '../button/button.jsx';
+
 import surpriseIcon from './icon--surprise.svg';
+import scratchLabLogo from './scratch-lab-logo.svg';
 
 import styles from './welcome-modal.css';
 
@@ -22,6 +24,8 @@ const WelcomeModalComponent = props => (
             direction="column"
             grow={1}
         >
+            {/* TITLE BAR */}
+
             <div className={classNames(styles.header)}>
                 <div
                     className={classNames(
@@ -54,6 +58,31 @@ const WelcomeModalComponent = props => (
                     </Button>
                 </div>
             </div>
+
+            {/* MASTHEAD / JUICE BAR */}
+            <Box
+                className={styles.masthead}
+            >
+                <div className={styles.flexRow}>
+                    <img
+                        className={styles.scratchLabLogo}
+                        src={scratchLabLogo}
+                    />
+                </div>
+                <div
+                    className={classNames(styles.flexRow, styles.mastheadText)}
+                >
+                    <div className={styles.mastheadInner}>
+                        <FormattedMessage
+                            defaultMessage="A place for the Scratch Team to explore,
+                                share, and gather feedback on new features for Scratch."
+                            description="description of Scratch Lab"
+                            id="gui.welcomeModal.descriptionOfScratchLab"
+                        />
+                    </div>
+                </div>
+            </Box>
+
         </Box>
     </ReactModal>
 );
