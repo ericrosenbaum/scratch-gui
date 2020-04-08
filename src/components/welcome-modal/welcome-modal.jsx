@@ -14,11 +14,11 @@ const WelcomeModalComponent = props => (
     <ReactModal
         isOpen
         className={classNames(styles.modalContent, styles.fullScreen)}
-        contentLabel={'contentLabel'}
         overlayClassName={styles.modalOverlay}
         onRequestClose={props.onClose}
     >
         <Box
+            dir={props.isRtl ? 'rtl' : 'ltr'}
             direction="column"
             grow={1}
         >
@@ -59,6 +59,7 @@ const WelcomeModalComponent = props => (
 );
 
 WelcomeModalComponent.propTypes = {
+    isRtl: PropTypes.bool,
     onClose: PropTypes.func
 };
 
