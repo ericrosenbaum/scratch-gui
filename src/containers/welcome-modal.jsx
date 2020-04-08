@@ -8,6 +8,11 @@ import {
     closeWelcomeModal
 } from '../reducers/modals';
 
+import {
+    activateTab,
+    COSTUMES_TAB_INDEX
+} from '../reducers/editor-tab.js';
+
 class WelcomeModal extends React.Component {
     render () {
         return (
@@ -27,6 +32,7 @@ const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch => ({
     onClose: () => {
         dispatch(closeWelcomeModal());
+        dispatch(activateTab(COSTUMES_TAB_INDEX));
     }
 });
 
