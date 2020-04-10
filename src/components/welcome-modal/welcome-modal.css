@@ -202,18 +202,20 @@ $sides: 20rem;
 }
 
 .masthead-callout {
-    width: 800px;
+    width: 996px;
     background-color: $ui-white;
     border-radius: 0.5rem;
 }
 
 .callout-info {
-    padding: 4rem;
-    max-width: 300px;
+    padding: 2rem;
+    max-width: 350px;
 }
 
 .callout-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 500;
     padding-bottom: 2rem;
 }
 
@@ -228,4 +230,8 @@ $sides: 20rem;
     background-image: url("./bleb.svg");
     background-size: cover;
     margin:auto;
+}
+
+.callout-image {
+    padding: 2rem;
 }

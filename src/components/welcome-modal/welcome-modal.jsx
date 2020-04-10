@@ -9,7 +9,8 @@ import Button from '../button/button.jsx';
 
 import surpriseIcon from './icon--surprise.svg';
 import scratchLabLogo from './scratch-lab-logo.svg';
-import bleb from './bleb.svg';
+import calloutImage from './callout-image.png';
+
 
 import styles from './welcome-modal.css';
 
@@ -83,7 +84,7 @@ const WelcomeModalComponent = props => (
                     </div>
                 </div>
                 <div className={styles.flexRow}>
-                    <div className={classNames(styles.mastheadCallout, styles.flexRow)}>
+                    <div className={classNames(styles.mastheadCallout, styles.bleb, styles.flexRow)}>
                         <div className={styles.calloutInfo}>
                             <div className={styles.calloutText}>
                                 <FormattedMessage
@@ -106,8 +107,8 @@ const WelcomeModalComponent = props => (
                                 </Button>
                             </div>
                         </div>
-                        <div className={styles.bleb}>
-
+                        <div className={styles.calloutImage}>
+                            <img src={calloutImage} />
                         </div>
                     </div>
                 </div>
