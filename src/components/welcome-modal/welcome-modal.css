@@ -222,8 +222,22 @@ $sides: 20rem;
 .try-it-button {
     background: $motion-primary;
     color: white;
-    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
     padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    user-select: none;
+}
+
+.try-it-button-icon {
+    height: 2rem;
 }
 
 .bleb {

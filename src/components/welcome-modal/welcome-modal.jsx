@@ -94,17 +94,22 @@ const WelcomeModalComponent = props => (
                                 />
                             </div>
                             <div>
-                                <Button
+                                <button
                                     className={styles.tryItButton}
-                                    iconSrc={surpriseIcon}
                                     onClick={props.onClose}
                                 >
-                                    <FormattedMessage
-                                        defaultMessage="Try it out"
-                                        description="Try it out button in modal"
-                                        id="gui.welcomeModal.tryIt"
+                                    <img
+                                        src={surpriseIcon}
+                                        className={styles.tryItButtonIcon}
                                     />
-                                </Button>
+                                    <div>
+                                        <FormattedMessage
+                                            defaultMessage="Try it out"
+                                            description="Try it out button in modal"
+                                            id="gui.welcomeModal.tryIt"
+                                        />
+                                    </div>
+                                </button>
                             </div>
                         </div>
                         <div className={styles.calloutImage}>
