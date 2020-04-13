@@ -11,7 +11,6 @@ import surpriseIcon from './icon--surprise.svg';
 import scratchLabLogo from './scratch-lab-logo.svg';
 import calloutImage from './callout-image.png';
 
-
 import styles from './welcome-modal.css';
 
 const WelcomeModalComponent = props => (
@@ -62,6 +61,7 @@ const WelcomeModalComponent = props => (
             </div>
 
             {/* MASTHEAD / JUICE BAR */}
+
             <Box
                 className={styles.masthead}
             >
@@ -119,6 +119,74 @@ const WelcomeModalComponent = props => (
                 </div>
             </Box>
 
+            { /* INSTRUCTION STEPS */}
+
+            <div
+                className={styles.flexRow}
+            >
+                <div
+                    className={classNames(styles.instructionsInner)}
+                >
+                    <div
+                        className={styles.instructionsTitle}
+                    >
+                        <FormattedMessage
+                            defaultMessage="Where can I find it?"
+                            description="Where can I find it?"
+                            id="gui.colorPaletteExploration.whereCanIFindIt"
+                        />
+                    </div>
+                    <div
+                        className={classNames(styles.instructionsSteps, styles.flexRow)}
+                    >
+                        <div
+                            className={styles.instructionsStep}
+                        >
+                            <div className={styles.instructionsStepNumber}>
+                                {1}
+                            </div>
+                            <FormattedMessage
+                                defaultMessage="Go to Costumes Tab"
+                                description="Go to Costumes Tab"
+                                id="gui.colorPaletteExploration.goToCostumesTab"
+                            />
+                            <div
+                                className={classNames(styles.instructionsImage, styles.instructionsImage1)}
+                            />
+                        </div>
+                        <div
+                            className={styles.instructionsStep}
+                        >
+                            <div className={styles.instructionsStepNumber}>
+                                {2}
+                            </div>
+                            <FormattedMessage
+                                defaultMessage="Click on Fill or Outline"
+                                description="Click on Fill or Outline"
+                                id="gui.colorPaletteExploration.clickOnFillOrOutline"
+                            />
+                            <div
+                                className={classNames(styles.instructionsImage, styles.instructionsImage2)}
+                            />
+                        </div>
+                        <div
+                            className={styles.instructionsStep}
+                        >
+                            <div className={styles.instructionsStepNumber}>
+                                {3}
+                            </div>
+                            <FormattedMessage
+                                defaultMessage="Try the new color palette"
+                                description="Try the new color palette"
+                                id="gui.colorPaletteExploration.tryTheNewColorPalette"
+                            />
+                            <div
+                                className={classNames(styles.instructionsImage, styles.instructionsImage3)}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Box>
     </ReactModal>
 );
