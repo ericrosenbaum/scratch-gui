@@ -305,3 +305,31 @@ $sides: 20rem;
 .instructions-image-3 {
     background-image: url("./instructions-3.png");
 }
+
+.questions {
+    width: 996px;
+    padding-bottom: 6rem;
+    align-items: flex-start;
+}
+
+.questions-inner {
+    width: 600px;
+}
+
+.questions-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.question {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 3rem;
+}
+
+.answer {
+    font-weight: normal;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+}

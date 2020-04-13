@@ -125,7 +125,7 @@ const WelcomeModalComponent = props => (
                 className={styles.flexRow}
             >
                 <div
-                    className={classNames(styles.instructionsInner)}
+                    className={styles.instructionsInner}
                 >
                     <div
                         className={styles.instructionsTitle}
@@ -182,6 +182,76 @@ const WelcomeModalComponent = props => (
                             />
                             <div
                                 className={classNames(styles.instructionsImage, styles.instructionsImage3)}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            { /* QUESTIONS */}
+
+            <div
+                className={styles.flexRow}
+            >
+                <div
+                    className={styles.questions}
+                >
+                    <div
+                        className={styles.questionsInner}
+                    >
+                        <div
+                            className={styles.questionsTitle}
+                        >
+                            <FormattedMessage
+                                defaultMessage="Questions"
+                                description="Questions"
+                                id="gui.colorPaletteExploration.questions"
+                            />
+                        </div>
+                        <div className={styles.question}>
+                            <FormattedMessage
+                                defaultMessage="What is the Color Palette Exploration?"
+                                description="What is the Color Palette Exploration?"
+                                id="gui.colorPaletteExploration.question1"
+                            />
+                        </div>
+                        <div className={styles.answer}>
+                            <FormattedMessage
+                                defaultMessage="This is an experimental version of the Scratch editor,
+                                where the Scratch Team is testing out a new way to choose paint colors."
+                                description="answer 1"
+                                id="gui.colorPaletteExploration.answer1"
+                            />
+                        </div>
+                        <div className={styles.question}>
+                            <FormattedMessage
+                                defaultMessage="Why is Scratch Team doing this exploration?"
+                                description="Why is Scratch Team doing this exploration?"
+                                id="gui.colorPaletteExploration.question2"
+                            />
+                        </div>
+                        <div className={styles.answer}>
+                            <FormattedMessage
+                                defaultMessage="We hope this new way of picking colors makes it
+                                easier to express your ideas. We’re sharing this work in progress
+                                so we can get feedback to help us improve it."
+                                description="answer 2"
+                                id="gui.colorPaletteExploration.answer2"
+                            />
+                        </div>
+                        <div className={styles.question}>
+                            <FormattedMessage
+                                defaultMessage="When will the new paint colors be on Scratch?"
+                                description="When will the new paint colors be on Scratch?"
+                                id="gui.colorPaletteExploration.question3"
+                            />
+                        </div>
+                        <div className={styles.answer}>
+                            <FormattedMessage
+                                defaultMessage="We're still exploring and testing this feature
+                                before we decide how it might go into the main Scratch site."
+                                description="answer 3"
+                                id="gui.colorPaletteExploration.answer3"
                             />
                         </div>
                     </div>
