@@ -72,6 +72,11 @@ $sides: 20rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1rem;
     font-weight: normal;
+
+    position: fixed;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $ui-black-transparent;
 }
 
 .header-item {
@@ -189,6 +194,7 @@ $sides: 20rem;
 
 .scratch-lab-logo {
     height:  8rem;
+    margin-top: 4rem;
 }
 
 .masthead-inner {
