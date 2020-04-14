@@ -10,6 +10,7 @@ import Button from '../button/button.jsx';
 import surpriseIcon from './icon--surprise.svg';
 import scratchLabLogo from './scratch-lab-logo.svg';
 import calloutImage from './callout-image.png';
+import scratchLogo from './scratch-logo.svg';
 
 import styles from './welcome-modal.css';
 
@@ -257,6 +258,44 @@ const WelcomeModalComponent = props => (
                     </div>
                 </div>
             </div>
+
+            { /* FOOTER */}
+
+            <div
+                className={classNames(styles.footer, styles.flexRow)}
+            >
+                <div className={classNames(styles.footerInner, styles.flexRow)}>
+                    <img
+                        className={styles.scratchLogo}
+                        src={scratchLogo}
+                    />
+                    <div className={styles.divider} />
+                    <div className={styles.footerTextArea}>
+                        <div className={styles.footerText}>
+                            <FormattedMessage
+                                defaultMessage="Scratch Lab is a place for the Scratch Team to
+                                explore, share, and gather feedback on new features for Scratch."
+                                description="Footer info"
+                                id="gui.colorPaletteExploration.footerInfo"
+                            />
+                        </div>
+                        <div className={styles.footerLink}>
+                            <a
+                                href="https://scratch.mit.edu/about"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                <FormattedMessage
+                                    defaultMessage="Learn more about Scratch"
+                                    description="Learn more about Scratch"
+                                    id="gui.colorPaletteExploration.learnMoreAboutScratch"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </Box>
     </ReactModal>
 );
