@@ -77,8 +77,8 @@ const WelcomeModalComponent = props => (
                 >
                     <div className={styles.mastheadInner}>
                         <FormattedMessage
-                            defaultMessage="A place for the Scratch Team to explore,
-                                share, and gather feedback on new features for Scratch."
+                            defaultMessage="Try out experimental features in the
+                            Scratch editor that the Scratch Team is exploring."
                             description="description of Scratch Lab"
                             id="gui.welcomeModal.descriptionOfScratchLab"
                         />
@@ -249,8 +249,9 @@ const WelcomeModalComponent = props => (
                         </div>
                         <div className={styles.answer}>
                             <FormattedMessage
-                                defaultMessage="We're still exploring and testing this feature
-                                before we decide how it might go into the main Scratch site."
+                                defaultMessage="We're still exploring, gathering
+                                feedback, and revising this feature before we
+                                decide if it might go into the main Scratch site."
                                 description="answer 3"
                                 id="gui.colorPaletteExploration.answer3"
                             />
