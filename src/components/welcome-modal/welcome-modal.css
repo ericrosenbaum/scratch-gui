@@ -109,6 +109,8 @@ $sides: 20rem;
     user-select: none;
     letter-spacing: 0.4px;
     cursor: default;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 [dir="ltr"] .header-item-title {
@@ -140,6 +142,7 @@ $sides: 20rem;
 
 .back-button {
     font-weight: normal;
+    font-size: 14px;
     padding-right: 0;
     padding-left: 0;
 }
