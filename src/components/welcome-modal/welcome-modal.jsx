@@ -113,8 +113,11 @@ const WelcomeModalComponent = props => (
                                 </button>
                             </div>
                         </div>
-                        <div className={styles.calloutImage}>
-                            <img src={calloutImage} />
+                        <div className={styles.calloutImageContainer}>
+                            <img
+                                className={styles.calloutImage}
+                                src={calloutImage}
+                            />
                         </div>
                     </div>
                 </div>

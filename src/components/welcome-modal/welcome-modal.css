@@ -259,14 +259,19 @@ $sides: 20rem;
     margin:auto;
 }
 
-.callout-image {
+.callout-image-container {
     padding: 2rem;
+}
+
+.callout-image {
+    height: 331px;
 }
 
 .instructions-inner {
     width: 996px;
     align-items: flex-start;
-    padding-bottom: 6rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .instructions-title {

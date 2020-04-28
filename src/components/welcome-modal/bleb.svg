@@ -5,10 +5,16 @@
 <style type="text/css">
 	.st0{fill:#FFBF00;}
 </style>
-<g transform="translate(-118.72091,-101.33438)">
-	<g>
-		<path class="st0" d="M450.8,500.6c0,0,249.9,2.5,191.2-127.7c-11.8-26.1-31.8-103.8,46.9-128.6c75.3-23.3,109.8-142.6,147.3-142.7
-			c89-0.2,278.5-0.2,278.5-0.2v397.8L450.8,500.6z"/>
+<title>Path 2</title>
+<desc>Created with Sketch.</desc>
+<g id="Skethces">
+	<g id="Single-Modal" transform="translate(-510.000000, -305.000000)">
+		<g id="Masthead" transform="translate(-116.000000, -465.000000)">
+			<g id="Feature-Callout" transform="translate(258.000000, 770.000000)">
+				<path id="Path-2" class="st0" d="M736,400c0,0,113.7-28.6,124.5-76.9s-63.3-101.5,0-154.4c33.4-28,90.6-34.6,129.5-71.3
+					c34.6-32.7,50.6-97.4,86-97.4c50,0,146.4,0.1,289,0.2V400C945.7,400,736,400,736,400z"/>
+			</g>
+		</g>
 	</g>
 </g>
 </svg>
