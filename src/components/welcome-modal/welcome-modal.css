@@ -141,7 +141,7 @@ $sides: 20rem;
 }
 
 .back-button {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 14px;
     padding-right: 0;
     padding-left: 0;
@@ -227,7 +227,7 @@ $sides: 20rem;
 .callout-text {
     font-size: 2rem;
     line-height: 3rem;
-    font-weight: 500;
+    font-weight: bold;
     padding-bottom: 2rem;
 }
 
