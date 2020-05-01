@@ -77,8 +77,8 @@ const WelcomeModalComponent = props => (
                 >
                     <div className={styles.mastheadInner}>
                         <FormattedMessage
-                            defaultMessage="Try out experimental features in the
-                            Scratch editor that the Scratch Team is exploring."
+                            defaultMessage="Try out experimental features that the
+                            Scratch Team is exploring."
                             description="description of Scratch Lab"
                             id="gui.welcomeModal.descriptionOfScratchLab"
                         />
@@ -87,11 +87,19 @@ const WelcomeModalComponent = props => (
                 <div className={styles.flexRow}>
                     <div className={classNames(styles.mastheadCallout, styles.bleb, styles.flexRow)}>
                         <div className={styles.calloutInfo}>
+                            <div className={styles.calloutTitle}>
+                                <FormattedMessage
+                                    defaultMessage="Color Palette Exploration"
+                                    description="Callout title"
+                                    id="gui.welcomeModal.calloutTitle"
+                                />
+                            </div>
                             <div className={styles.calloutText}>
                                 <FormattedMessage
-                                    defaultMessage="Try a new way to pick colors in the Costume Editor"
-                                    description="Color palette callout info"
-                                    id="gui.welcomeModal.colorPaletteCalloutInfo"
+                                    defaultMessage="Try a new way to pick colors
+                                    in the Costume Editor"
+                                    description="Callout text"
+                                    id="gui.welcomeModal.calloutText"
                                 />
                             </div>
                             <div>
