@@ -135,6 +135,14 @@ class Blocks extends React.Component {
         if (this.props.isVisible) {
             this.setLocale();
         }
+
+        if (this.props.preLoadedExtension) {
+            this.props.vm.extensionManager.loadExtensionURL(this.props.preLoadedExtension);
+            window.setTimeout(
+                () => this.handleCategorySelected(this.props.preLoadedExtension),
+                5000
+            );
+        }
     }
     shouldComponentUpdate (nextProps, nextState) {
         return (
@@ -605,6 +613,7 @@ Blocks.propTypes = {
         comments: PropTypes.bool,
         collapse: PropTypes.bool
     }),
+    preLoadedExtension: PropTypes.string,
     stageSize: PropTypes.oneOf(Object.keys(STAGE_DISPLAY_SIZES)).isRequired,
     toolboxXML: PropTypes.string,
     updateToolboxState: PropTypes.func,
