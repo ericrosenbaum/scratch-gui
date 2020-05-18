@@ -46,6 +46,9 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
+import soundSensingIconURL from './soundSensing/soundSensing.png';
+import soundSensingInsetIconURL from './soundSensing/soundSensing-small.svg';
+
 export default [
     {
         name: (
@@ -83,6 +86,26 @@ export default [
                 defaultMessage="Draw with your sprites."
                 description="Description for the 'Pen' extension"
                 id="gui.extension.pen.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Sound Sensing"
+                description="Name for the Sound Sensing extension"
+                id="gui.extension.soundSensing.name"
+            />
+        ),
+        extensionId: 'soundSensing',
+        iconURL: soundSensingIconURL,
+        insetIconURL: soundSensingInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Sense loudness from your mic or your project."
+                description="Description for the sound sensing extension"
+                id="gui.extension.soundSensing.description"
             />
         ),
         featured: true
