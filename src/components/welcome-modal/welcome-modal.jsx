@@ -36,9 +36,9 @@ const WelcomeModalComponent = props => (
                     )}
                 >
                     <FormattedMessage
-                        defaultMessage="Color Palette Exploration"
-                        description="Color Palette Exploration"
-                        id="gui.colorPaletteExploration.title"
+                        defaultMessage="Sound Sensing Extension"
+                        description="Sound Sensing Extension"
+                        id="gui.soundSensing.title"
                     />
                 </div>
                 <div
@@ -89,15 +89,14 @@ const WelcomeModalComponent = props => (
                         <div className={styles.calloutInfo}>
                             <div className={styles.calloutTitle}>
                                 <FormattedMessage
-                                    defaultMessage="Color Palette Exploration"
+                                    defaultMessage="Sound Sensing Extension"
                                     description="Callout title"
                                     id="gui.welcomeModal.calloutTitle"
                                 />
                             </div>
                             <div className={styles.calloutText}>
                                 <FormattedMessage
-                                    defaultMessage="Try a new way to pick colors
-                                    in the Costume Editor"
+                                    defaultMessage="Sense loudness from your microphone or your project"
                                     description="Callout text"
                                     id="gui.welcomeModal.calloutText"
                                 />
@@ -143,9 +142,9 @@ const WelcomeModalComponent = props => (
                         className={styles.instructionsTitle}
                     >
                         <FormattedMessage
-                            defaultMessage="Where can I find it?"
-                            description="Where can I find it?"
-                            id="gui.colorPaletteExploration.whereCanIFindIt"
+                            defaultMessage="Things to Try"
+                            description="Things to Try"
+                            id="gui.soundSensingExtension.whereCanIFindIt"
                         />
                     </div>
                     <div
@@ -158,9 +157,9 @@ const WelcomeModalComponent = props => (
                                 {1}
                             </div>
                             <FormattedMessage
-                                defaultMessage="Go to Costumes Tab"
-                                description="Go to Costumes Tab"
-                                id="gui.colorPaletteExploration.goToCostumesTab"
+                                defaultMessage="Show loudness as a number"
+                                description=""
+                                id="gui.soundSensingExtension.goToCostumesTab"
                             />
                             <div
                                 className={classNames(styles.instructionsImage, styles.instructionsImage1)}
@@ -173,27 +172,12 @@ const WelcomeModalComponent = props => (
                                 {2}
                             </div>
                             <FormattedMessage
-                                defaultMessage="Click on Fill or Outline"
-                                description="Click on Fill or Outline"
-                                id="gui.colorPaletteExploration.clickOnFillOrOutline"
+                                defaultMessage="Trigger animation with sounds"
+                                description=""
+                                id="gui.soundSensingExtension.clickOnFillOrOutline"
                             />
                             <div
                                 className={classNames(styles.instructionsImage, styles.instructionsImage2)}
-                            />
-                        </div>
-                        <div
-                            className={styles.instructionsStep}
-                        >
-                            <div className={styles.instructionsStepNumber}>
-                                {3}
-                            </div>
-                            <FormattedMessage
-                                defaultMessage="Try the new color palette"
-                                description="Try the new color palette"
-                                id="gui.colorPaletteExploration.tryTheNewColorPalette"
-                            />
-                            <div
-                                className={classNames(styles.instructionsImage, styles.instructionsImage3)}
                             />
                         </div>
                     </div>
@@ -217,54 +201,40 @@ const WelcomeModalComponent = props => (
                             <FormattedMessage
                                 defaultMessage="Questions"
                                 description="Questions"
-                                id="gui.colorPaletteExploration.questions"
+                                id="gui.soundSensingExtension.questions"
                             />
                         </div>
                         <div className={styles.question}>
                             <FormattedMessage
-                                defaultMessage="What is the Color Palette Exploration?"
-                                description="What is the Color Palette Exploration?"
-                                id="gui.colorPaletteExploration.question1"
+                                defaultMessage="What is the Sound Sensing extension?"
+                                description="What is the Sound Sensing extension?"
+                                id="gui.soundSensingExtension.question1"
                             />
                         </div>
                         <div className={styles.answer}>
                             <FormattedMessage
                                 defaultMessage="This is an experimental version of the Scratch editor,
-                                where the Scratch Team is testing out a new way to choose paint colors."
+                                where the Scratch Team is testing out a new extension. The Sound Sensing
+                                extension adds new blocks to Scratch that let you sense sound, so you can
+                                interact with your projects in new ways."
                                 description="answer 1"
-                                id="gui.colorPaletteExploration.answer1"
+                                id="gui.soundSensingExtension.answer1"
                             />
                         </div>
                         <div className={styles.question}>
                             <FormattedMessage
-                                defaultMessage="Why is Scratch Team doing this exploration?"
-                                description="Why is Scratch Team doing this exploration?"
-                                id="gui.colorPaletteExploration.question2"
-                            />
-                        </div>
-                        <div className={styles.answer}>
-                            <FormattedMessage
-                                defaultMessage="We hope this new way of picking colors makes it
-                                easier to express your ideas. We’re sharing this work in progress
-                                so we can get feedback to help us improve it."
-                                description="answer 2"
-                                id="gui.colorPaletteExploration.answer2"
-                            />
-                        </div>
-                        <div className={styles.question}>
-                            <FormattedMessage
-                                defaultMessage="When will the new paint colors be on Scratch?"
-                                description="When will the new paint colors be on Scratch?"
-                                id="gui.colorPaletteExploration.question3"
+                                defaultMessage="When will the Sound Sensing extension be on Scratch?"
+                                description="When will the Sound Sensing extension be on Scratch?"
+                                id="gui.soundSensingExtension.question2"
                             />
                         </div>
                         <div className={styles.answer}>
                             <FormattedMessage
                                 defaultMessage="We're still exploring, gathering
-                                feedback, and revising this feature before we
+                                feedback, and revising this extension before we
                                 decide if it might go into the main Scratch site."
-                                description="answer 3"
-                                id="gui.colorPaletteExploration.answer3"
+                                description="answer 2"
+                                id="gui.soundSensingExtension.answer2"
                             />
                         </div>
                     </div>
@@ -288,7 +258,7 @@ const WelcomeModalComponent = props => (
                                 defaultMessage="Scratch Lab is a place for the Scratch Team to
                                 explore, share, and gather feedback on new features for Scratch."
                                 description="Footer info"
-                                id="gui.colorPaletteExploration.footerInfo"
+                                id="gui.soundSensingExtension.footerInfo"
                             />
                         </div>
                         <div className={styles.footerLink}>
@@ -300,7 +270,7 @@ const WelcomeModalComponent = props => (
                                 <FormattedMessage
                                     defaultMessage="Learn more about Scratch"
                                     description="Learn more about Scratch"
-                                    id="gui.colorPaletteExploration.learnMoreAboutScratch"
+                                    id="gui.soundSensingExtension.learnMoreAboutScratch"
                                 />
                             </a>
                         </div>

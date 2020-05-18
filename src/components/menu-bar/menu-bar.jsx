@@ -314,9 +314,9 @@ class MenuBar extends React.Component {
                             onClick={this.props.onOpenWelcomeModal}
                         >
                             <FormattedMessage
-                                defaultMessage="Color Palette Exploration"
-                                description="title of the color palette exploration"
-                                id="gui.colorPaletteExploration.title"
+                                defaultMessage="Sound Sensing extension"
+                                description="title"
+                                id="gui.soundSensingExtension.title"
                             />
                             <img
                                 alt="Help"
