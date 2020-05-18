@@ -294,6 +294,7 @@ const GUIComponent = props => {
                                             canUseCloud={canUseCloud}
                                             grow={1}
                                             isVisible={blocksTabVisible}
+                                            preLoadedExtension={'soundSensing'}
                                             options={{
                                                 media: `${basePath}static/blocks-media/`
                                             }}
