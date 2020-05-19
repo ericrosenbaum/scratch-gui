@@ -216,16 +216,42 @@ const WelcomeModalComponent = props => (
                                 defaultMessage="This is an experimental version of the Scratch editor,
                                 where the Scratch Team is testing out a new extension. The Sound Sensing
                                 extension adds new blocks to Scratch that let you sense sound, so you can
-                                interact with your projects in new ways."
+                                interact with your projects in new ways: sing to make your sprite dance,
+                                use music to control animation, or whatever else you can imagine."
                                 description="answer 1"
                                 id="gui.soundSensingExtension.answer1"
                             />
                         </div>
                         <div className={styles.question}>
                             <FormattedMessage
+                                defaultMessage="What are the &quot;microphone loudness&quot; and &quot;project loudness&quot; blocks?"
+                                description="What are microphone loudness and project loudness?"
+                                id="gui.soundSensingExtension.question2"
+                            />
+                        </div>
+                        <div className={styles.answer}>
+                            <FormattedMessage
+                                defaultMessage="The microphone loudness block reports a number from 0 to 100 representing
+                                the loudness of the sound being currently received by the microphone connected to your
+                                computer. It replaces the existing loudness block in the sensing category."
+                                description="answer 2"
+                                id="gui.soundSensingExtension.answer2"
+                            />
+                        </div>
+                        <div className={styles.answer}>
+                            <FormattedMessage
+                                defaultMessage="The project loudness block reports a number from 0 to 100 representing
+                                the loudness of the sounds being played by scratch. It includes sounds played using the
+                                play sound blocks, the music extension and the text to speech extension."
+                                description="answer 2a"
+                                id="gui.soundSensingExtension.answer2a"
+                            />
+                        </div>
+                        <div className={styles.question}>
+                            <FormattedMessage
                                 defaultMessage="When will the Sound Sensing extension be on Scratch?"
                                 description="When will the Sound Sensing extension be on Scratch?"
-                                id="gui.soundSensingExtension.question2"
+                                id="gui.soundSensingExtension.question3"
                             />
                         </div>
                         <div className={styles.answer}>
@@ -234,7 +260,7 @@ const WelcomeModalComponent = props => (
                                 feedback, and revising this extension before we
                                 decide if it might go into the main Scratch site."
                                 description="answer 2"
-                                id="gui.soundSensingExtension.answer2"
+                                id="gui.soundSensingExtension.answer3"
                             />
                         </div>
                     </div>
