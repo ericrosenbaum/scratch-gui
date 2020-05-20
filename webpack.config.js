@@ -177,6 +177,11 @@ module.exports = [
                 context: 'src/examples'
             }]),
             new CopyWebpackPlugin([{
+                from: 'sb3/**',
+                to: 'static',
+                context: 'src/examples'
+            }]),
+            new CopyWebpackPlugin([{
                 from: 'extension-worker.{js,js.map}',
                 context: 'node_modules/scratch-vm/dist/web'
             }])
