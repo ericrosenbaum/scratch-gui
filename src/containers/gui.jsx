@@ -23,7 +23,6 @@ import {
     closeBackdropLibrary,
     closeTelemetryModal,
     openExtensionLibrary,
-    openWelcomeModal
 } from '../reducers/modals';
 
 import FontLoaderHOC from '../lib/font-loader-hoc.jsx';
@@ -45,8 +44,6 @@ class GUI extends React.Component {
         setIsScratchDesktop(this.props.isScratchDesktop);
         this.props.onStorageInit(storage);
         this.props.onVmInit(this.props.vm);
-
-        this.props.onShowWelcomeModal();
     }
     componentDidUpdate (prevProps) {
         if (this.props.projectId !== prevProps.projectId && this.props.projectId !== null) {
@@ -109,7 +106,6 @@ GUI.propTypes = {
     loadingStateVisible: PropTypes.bool,
     onProjectLoaded: PropTypes.func,
     onSeeCommunity: PropTypes.func,
-    onShowWelcomeModal: PropTypes.func,
     onStorageInit: PropTypes.func,
     onUpdateProjectId: PropTypes.func,
     onVmInit: PropTypes.func,
@@ -166,7 +162,6 @@ const mapDispatchToProps = dispatch => ({
     onRequestCloseBackdropLibrary: () => dispatch(closeBackdropLibrary()),
     onRequestCloseCostumeLibrary: () => dispatch(closeCostumeLibrary()),
     onRequestCloseTelemetryModal: () => dispatch(closeTelemetryModal()),
-    onShowWelcomeModal: () => dispatch(openWelcomeModal())
 });
 
 const ConnectedGUI = injectIntl(connect(

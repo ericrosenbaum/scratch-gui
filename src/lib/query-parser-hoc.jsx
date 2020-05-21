@@ -7,6 +7,7 @@ import {detectTutorialId} from './tutorial-from-url';
 
 import {activateDeck} from '../reducers/cards';
 import {openTipsLibrary} from '../reducers/modals';
+import {openWelcomeModal} from '../reducers/modals';
 
 /* Higher Order Component to get parameters from the URL query string and initialize redux state
  * @param {React.Component} WrappedComponent: component to render
@@ -24,6 +25,11 @@ const QueryParserHOC = function (WrappedComponent) {
                 } else {
                     this.setActiveCards(tutorialId);
                 }
+            }
+
+            // Load the welcome modal only if there is no starter project in the URL
+            if (!queryParams.starterProject) {
+                this.props.onOpenWelcomeModal();
             }
         }
         setActiveCards (tutorialId) {
@@ -46,10 +52,14 @@ const QueryParserHOC = function (WrappedComponent) {
         }
     }
     QueryParserComponent.propTypes = {
+        onOpenWelcomeModal: PropTypes.func,
         onOpenTipsLibrary: PropTypes.func,
         onUpdateReduxDeck: PropTypes.func
     };
     const mapDispatchToProps = dispatch => ({
+        onOpenWelcomeModal: () => {
+            dispatch(openWelcomeModal());
+        },
         onOpenTipsLibrary: () => {
             dispatch(openTipsLibrary());
         },

@@ -55,7 +55,7 @@ const vmManagerHOC = function (WrappedComponent) {
         }
         loadProject () {
             const urlParams = new URLSearchParams(window.location.search);
-            const project = urlParams.get('project');
+            const project = urlParams.get('starterProject');
             let firstPromise = this.props.vm.loadProject(this.props.projectData);
             if (project) {
                 firstPromise = this.downloadProjectFromURLDirect(project);
