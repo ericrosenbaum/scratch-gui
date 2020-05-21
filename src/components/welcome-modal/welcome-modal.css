@@ -331,6 +331,49 @@ $sides: 20rem;
     background-image: url("./instructions-3.png");
 }
 
+.starter-projects-inner {
+    width: 960px;
+    align-items: flex-start;
+    padding-bottom: 5rem;
+}
+
+.project-cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-card {
+    margin: 0 1.5rem;
+    border: 1px solid $ui-tertiary;
+    border-radius: .5rem;
+    background-color: $ui-white;
+    overflow: hidden;
+    flex-basis: 0;
+    flex-grow: 1;
+    text-decoration: none;
+    color: $text-primary;
+}
+
+.project-card-image {
+    max-width: 100%;
+}
+
+.project-card-info {
+    padding: 1rem;
+    line-height: 1.7em;
+}
+
+.project-card-title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.project-card-info-p {
+    margin: .2rem 0;
+}
+
 .questions {
     width: 996px;
     padding-bottom: 6rem;

@@ -12,6 +12,9 @@ import scratchLabLogo from './scratch-lab-logo.svg';
 import calloutImage from './callout-image.png';
 import scratchLogo from './scratch-logo.svg';
 
+import champDanceThumbnail from './champ-dance-thumbnail.png';
+import singToFishThumbnail from './sing-to-fish-thumbnail.png';
+
 import styles from './welcome-modal.css';
 
 const WelcomeModalComponent = props => (
@@ -144,7 +147,7 @@ const WelcomeModalComponent = props => (
                         <FormattedMessage
                             defaultMessage="Things to Try"
                             description="Things to Try"
-                            id="gui.soundSensingExtension.whereCanIFindIt"
+                            id="gui.soundSensingExtension.thingsToTry"
                         />
                     </div>
                     <div
@@ -183,6 +186,89 @@ const WelcomeModalComponent = props => (
                     </div>
                 </div>
             </div>
+
+            { /* STARTER PROJECTS */}
+
+            <div
+                className={styles.flexRow}
+            >
+                <div
+                    className={styles.starterProjectsInner}
+                >
+                    <div
+                        className={styles.instructionsTitle}
+                    >
+                        <FormattedMessage
+                            defaultMessage="Starter Projects"
+                            description="Starter Projects"
+                            id="gui.soundSensingExtension.starterProjects"
+                        />
+                    </div>
+                    <div className={styles.projectCards}>
+                        <a
+                            className={styles.projectCard}
+                            href={'?starterProject=https://ericrosenbaum.github.io/scratch-gui/sound-sensing/static/sb3/sound-sensing-sing-to-fish.sb3'}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <div>
+                                <img
+                                    className={styles.projectCardImage}
+                                    src={singToFishThumbnail}
+                                />
+                            </div>
+                            <div className={styles.projectCardInfo}>
+                                <p className={styles.projectCardTitle}>{'Sing to these Fish'}</p>
+                                <p className={styles.projectCardInfoP}>
+                                    {'Sing into your mic to animate these fish'}
+                                </p>
+                            </div>
+                        </a>
+
+                        <a
+                            className={styles.projectCard}
+                            href={'?starterProject=https://ericrosenbaum.github.io/scratch-gui/sound-sensing/static/sb3/sound-sensing-champ-dance.sb3'}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <div>
+                                <img
+                                    className={styles.projectCardImage}
+                                    src={champDanceThumbnail}
+                                />
+                            </div>
+                            <div className={styles.projectCardInfo}>
+                                <p className={styles.projectCardTitle}>{'Dance Party'}</p>
+                                <p className={styles.projectCardInfoP}>
+                                    {'Animate in time with the music using the project loudness block'}
+                                </p>
+                            </div>
+                        </a>
+
+                        <a
+                            className={styles.projectCard}
+                            href={'?starterProject=https://ericrosenbaum.github.io/scratch-gui/sound-sensing/static/sb3/sound-sensing-champ-dance.sb3'}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <div>
+                                <img
+                                    className={styles.projectCardImage}
+                                    src={champDanceThumbnail}
+                                />
+                            </div>
+                            <div className={styles.projectCardInfo}>
+                                <p className={styles.projectCardTitle}>{'Dance Party'}</p>
+                                <p className={styles.projectCardInfoP}>
+                                    {'Animate in time with the music using the project loudness block'}
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
 
             { /* QUESTIONS */}
 
