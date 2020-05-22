@@ -14,6 +14,7 @@ import scratchLogo from './scratch-logo.svg';
 
 import champDanceThumbnail from './champ-dance-thumbnail.png';
 import singToFishThumbnail from './sing-to-fish-thumbnail.png';
+import barkForBananasThumbnail from './bark-for-bananas-thumbnail.png';
 
 import styles from './welcome-modal.css';
 
@@ -218,9 +219,9 @@ const WelcomeModalComponent = props => (
                                 />
                             </div>
                             <div className={styles.projectCardInfo}>
-                                <p className={styles.projectCardTitle}>{'Sing to these Fish'}</p>
+                                <p className={styles.projectCardTitle}>{'Sing to the Fishies'}</p>
                                 <p className={styles.projectCardInfoP}>
-                                    {'Sing into your mic to animate these fish'}
+                                    {'Sing into your mic to animate an underwater scene'}
                                 </p>
                             </div>
                         </a>
@@ -247,20 +248,20 @@ const WelcomeModalComponent = props => (
 
                         <a
                             className={styles.projectCard}
-                            href={'?starterProject=https://ericrosenbaum.github.io/scratch-gui/sound-sensing/static/sb3/sound-sensing-champ-dance.sb3'}
+                            href={'?starterProject=https://ericrosenbaum.github.io/scratch-gui/sound-sensing/static/sb3/sound-sensing-bark-for-bananas.sb3'}
                             rel="noopener noreferrer"
                             target="_blank"
                         >
                             <div>
                                 <img
                                     className={styles.projectCardImage}
-                                    src={champDanceThumbnail}
+                                    src={barkForBananasThumbnail}
                                 />
                             </div>
                             <div className={styles.projectCardInfo}>
-                                <p className={styles.projectCardTitle}>{'Dance Party'}</p>
+                                <p className={styles.projectCardTitle}>{'Bark for Bananas'}</p>
                                 <p className={styles.projectCardInfoP}>
-                                    {'Animate in time with the music using the project loudness block'}
+                                    {'Bark into your mic to make the dog jump and catch bananas'}
                                 </p>
                             </div>
                         </a>
