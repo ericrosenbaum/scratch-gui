@@ -65,7 +65,12 @@ const vmManagerHOC = function (WrappedComponent) {
                     this.props.onLoadedProject(this.props.loadingState, this.props.canSave);
                     // Wrap in a setTimeout because skin loading in
                     // the renderer can be async.
-                    setTimeout(() => this.props.onSetProjectUnchanged());
+                    setTimeout(() => {
+                        this.props.onSetProjectUnchanged();
+                        // If there is a starter project, remove it from the URL
+                        // This is a hack to make File->New work correctly
+                        history.pushState(null, null, window.location.origin + window.location.pathname);
+                    });
 
                     // If the vm is not running, call draw on the renderer manually
                     // This draws the state of the loaded project with no blocks running
