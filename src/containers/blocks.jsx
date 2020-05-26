@@ -138,10 +138,6 @@ class Blocks extends React.Component {
 
         if (this.props.preLoadedExtension) {
             this.props.vm.extensionManager.loadExtensionURL(this.props.preLoadedExtension);
-            window.setTimeout(
-                () => this.handleCategorySelected(this.props.preLoadedExtension),
-                5000
-            );
         }
     }
     shouldComponentUpdate (nextProps, nextState) {
@@ -157,6 +153,11 @@ class Blocks extends React.Component {
         );
     }
     componentDidUpdate (prevProps) {
+        // If welcome modal has closed, scroll to the extension category
+        if (prevProps.welcomeModalOpen && !this.props.welcomeModalOpen) {
+            this.handleCategorySelected(this.props.preLoadedExtension);
+        }
+
         // If any modals are open, call hideChaff to close z-indexed field editors
         if (this.props.anyModalVisible && !prevProps.anyModalVisible) {
             this.ScratchBlocks.hideChaff();
@@ -617,7 +618,8 @@ Blocks.propTypes = {
     stageSize: PropTypes.oneOf(Object.keys(STAGE_DISPLAY_SIZES)).isRequired,
     toolboxXML: PropTypes.string,
     updateToolboxState: PropTypes.func,
-    vm: PropTypes.instanceOf(VM).isRequired
+    vm: PropTypes.instanceOf(VM).isRequired,
+    welcomeModalOpen: PropTypes.bool
 };
 
 Blocks.defaultOptions = {
@@ -663,7 +665,8 @@ const mapStateToProps = state => ({
     locale: state.locales.locale,
     messages: state.locales.messages,
     toolboxXML: state.scratchGui.toolbox.toolboxXML,
-    customProceduresVisible: state.scratchGui.customProcedures.active
+    customProceduresVisible: state.scratchGui.customProcedures.active,
+    welcomeModalOpen: state.scratchGui.modals.welcomeModal
 });
 
 const mapDispatchToProps = dispatch => ({
