@@ -350,6 +350,21 @@ const WelcomeModalComponent = props => (
                                 id="gui.soundSensingExtension.answer3"
                             />
                         </div>
+                        <div className={styles.question}>
+                            <FormattedMessage
+                                defaultMessage="Can I save and share my projects made using the Sound Sensing extension?"
+                                description="Can I save and share my projects made using the Sound Sensing extension?"
+                                id="gui.soundSensingExtension.question4"
+                            />
+                        </div>
+                        <div className={styles.answer}>
+                            <FormattedMessage
+                                defaultMessage="You can save your project to your computer using the file menu, but
+                                you can not share it on the Scratch community."
+                                description="answer 4"
+                                id="gui.soundSensingExtension.answer4"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
