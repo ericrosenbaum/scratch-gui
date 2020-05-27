@@ -275,7 +275,7 @@ $sides: 20rem;
 }
 
 .instructions-inner {
-    width: 996px;
+    width: 960px;
     align-items: flex-start;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -340,12 +340,12 @@ $sides: 20rem;
 .project-cards {
     display: flex;
     width: 100%;
-    justify-content: space-between;
     align-items: flex-start;
 }
 
 .project-card {
-    margin: 0 1.5rem;
+    min-width: 270px;
+    margin-right: 4rem;
     border: 1px solid $ui-tertiary;
     border-radius: .5rem;
     background-color: $ui-white;
@@ -375,7 +375,7 @@ $sides: 20rem;
 }
 
 .questions {
-    width: 996px;
+    width: 960px;
     padding-bottom: 6rem;
     align-items: flex-start;
 }
