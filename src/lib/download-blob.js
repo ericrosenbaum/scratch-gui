@@ -8,7 +8,9 @@ export default (filename, blob) => {
         return;
     }
 
-    if ('download' in HTMLAnchorElement.prototype) {
+    const iOS = navigator.userAgent.match(/(iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/);
+
+    if ('download' in HTMLAnchorElement.prototype && !iOS) {
         const url = window.URL.createObjectURL(blob);
         downloadLink.href = url;
         downloadLink.download = filename;
