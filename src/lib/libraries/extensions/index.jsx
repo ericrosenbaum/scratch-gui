@@ -110,6 +110,26 @@ export default [
     {
         name: (
             <FormattedMessage
+                defaultMessage="Color Sensing"
+                description="Name for the 'Color Sensing' extension"
+                id="gui.extension.colorsensing.name"
+            />
+        ),
+        extensionId: 'colorSensing',
+        iconURL: videoSensingIconURL,
+        insetIconURL: videoSensingInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Sense colors with the camera."
+                description="Description for the 'Video Sensing' extension"
+                id="gui.extension.colorsensing.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="Text to Speech"
                 description="Name for the Text to Speech extension"
                 id="gui.extension.text2speech.name"
